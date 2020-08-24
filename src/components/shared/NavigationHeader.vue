@@ -8,23 +8,23 @@
       </div>
       <ul class="nav-links" v-bind:class="{ 'open': isToggle }">
         <li v-bind:class="{ 'fade': isToggle,'m-right': !isToggle }">
-          <a>
-            <router-link to="/">Home</router-link>
+          <a v-on:click="home()">
+            <a>Home</a>
           </a>
         </li>
         <li v-bind:class="{ 'fade': isToggle,'m-right': !isToggle }">
-          <a>
-            <router-link to="/about">About</router-link>
+          <a v-on:click="about()">
+            <a>About</a>
           </a>
         </li>
         <li v-bind:class="{ 'fade': isToggle,'m-right': !isToggle }">
-          <a>
-            <router-link to="/faq">Faq's</router-link>
+          <a v-on:click="faq()">
+            <a>Faq's</a>
           </a>
         </li>
         <li v-bind:class="{ 'fade': isToggle,'m-right': !isToggle }">
-          <a>
-            <router-link to="/contact">Contact</router-link>
+          <a v-on:click="contact()">
+            <a>Contact</a>
           </a>
         </li>
       </ul>
@@ -44,6 +44,30 @@ export default {
     toggle() {
       this.isToggle = !this.isToggle;
     },
+    home() {
+      if (this.isToggle) {
+        this.isToggle = false;
+      }
+      this.$router.push("/");
+    },
+    about() {
+      if (this.isToggle) {
+        this.isToggle = false;
+      }
+      this.$router.push("/about");
+    },
+    faq() {
+      if (this.isToggle) {
+        this.isToggle = false;
+      }
+      this.$router.push("/faq");
+    },
+    contact() {
+      if (this.isToggle) {
+        this.isToggle = false;
+      }
+      this.$router.push("/contact");
+    },
   },
 };
 </script>
@@ -56,6 +80,7 @@ export default {
 }
 .nav-links a a:hover {
   text-decoration: none;
+  cursor: pointer;
 }
 .fixed-nav {
   position: fixed;
@@ -86,8 +111,8 @@ nav {
   display: inline-flex;
 }
 
-.nav-links li a a{
-  color:#17a2b8 !important;
+.nav-links li a a {
+  color: #17a2b8 !important;
   text-decoration: none;
   font-size: 15px;
   font-weight: bold;
@@ -137,7 +162,7 @@ nav {
   .nav-links li {
     opacity: 0;
   }
-  .nav-links li a a{
+  .nav-links li a a {
     font-size: 19px;
   }
   .nav-links li:nth-child(1) {

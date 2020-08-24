@@ -145,7 +145,7 @@ a:hover {
   text-align: left;
 }
 .faqcontent {
-  margin-top: 5rem;
+  margin-top: 7rem;
 }
 #faqmis {
 }

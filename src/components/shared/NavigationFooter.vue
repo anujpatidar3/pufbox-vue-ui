@@ -4,19 +4,19 @@
       <div class="footer-right">
         <a href="#">
           <!-- <i class="fa fa-facebook-square"></i> -->
-          <font-awesome-icon :icon="['fas', 'ad']" ></font-awesome-icon>
+          <img src="../../assets/Icons/fb.svg">
         </a>
         <a href="#">
           <!-- <i class="fa fa-address-book"></i> -->
-           <font-awesome-icon :icon="['fas', 'ad']" ></font-awesome-icon>
+          <img src="../../assets/Icons/insta.svg">
         </a>
         <a href="#">
           <!-- <i class="far fa-linkedin"></i> -->
-           <font-awesome-icon :icon="['fas', 'ad']" ></font-awesome-icon>
+            <img src="../../assets/Icons/twitter.svg">
         </a>
         <a href="#">
           <!-- <i class="far fa-github"></i> -->
-           <font-awesome-icon :icon="['fas', 'ad']" ></font-awesome-icon>
+           <img src="../../assets/Icons/youtube.svg">
         </a>
       </div>
 
@@ -74,7 +74,9 @@ export default {
 // }
 
 
-
+.footer-right a{
+  padding: 5px 0;
+}
 
 .footer-distributed {
   background-color:var(--main-bg-color);
@@ -87,7 +89,7 @@ export default {
 }
 
 .footer-distributed .footer-left p {
-  color: var( --theme-vl-color);
+  color: black;
     text-decoration: none;
     font-size: 15px;
     font-weight: bold;
@@ -97,7 +99,7 @@ export default {
 /* Footer links */
 
 .footer-distributed p.footer-links {
-  color: var(--theme-vl-color);
+  color: black;
     text-decoration: none;
     font-size: 15px;
     font-weight: bold;
@@ -137,14 +139,13 @@ export default {
 .footer-distributed .footer-right a {
   text-decoration: none;
   display: inline-block;
-  width: 35px;
-  height: 35px;
+  width: 30px;
   border-radius: 2px;
   font-size: 25px;
   color: #17a2b8 !important;
   text-align: center;
   line-height: 35px;
-  margin-left: 3px;
+  margin-left: 10px;
   transition: all 0.25s;
 }
 
@@ -154,6 +155,8 @@ export default {
   transform: scale(1.1);
   -webkit-transform: scale(1.1);
 }
+
+
 
 .footer-distributed p.footer-links a:hover {
   text-decoration: none;
