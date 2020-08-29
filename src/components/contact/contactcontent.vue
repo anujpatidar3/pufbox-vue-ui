@@ -51,7 +51,7 @@
                 </div>
                 <div class="icon-detail">
                   <h4 v-scrollanimation>#128, Second Floor, Apollo Tower, Vijay Nagar</h4>
-                  <h4>Indore</h4>
+                  <h4 v-scrollanimation>Indore</h4>
                 </div>
               </div>
             </div>

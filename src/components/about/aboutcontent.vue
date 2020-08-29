@@ -75,7 +75,7 @@
                 Beyond
                 <span v-scrollanimation>The Box</span>
               </h1>
-              <p v-scrollanimation>Going beyond our boxes, at The Dog Box, we aim to make a difference for every dog out there. For every box that is purchased, we feed a stray. In essence, every time you buy a box, you are looking out for your dog and their furry friend. So come and join our tribe as we strive to build a more dog inclusive world, one box at a time.</p>
+              <p v-scrollanimation>Going beyond our boxes, at The PufBox, we aim to make a difference for every dog out there. For every box that is purchased, we feed a stray. In essence, every time you buy a box, you are looking out for your dog and their furry friend. So come and join our tribe as we strive to build a more dog inclusive world, one box at a time.</p>
             </div>
           </div>
         </b-col>
