@@ -1,6 +1,6 @@
 <template>
   <div class="HomeContent">
-    <div class="bv-example-row">
+    <div style="display:none" class="bv-example-row">
       <b-row class="row-r-overflow">
         <b-col style="padding-right:0" md="8" offset-md="2">
           <div id="about-one-b">
@@ -38,10 +38,10 @@
           <div id="working">
             <h1 class="heading-text">
               How The Puf
-              <span class="about-d-t">Box Works?</span>
+              <span v-scrollanimation class="about-d-t">Box Works?</span>
             </h1>
             <div class="heading-description">
-              <p>We have what your dog wants, the way you want it. Everything you love about curated subscription boxes, plus customizable auto-replenishments, combined together.</p>
+              <p v-scrollanimation>We have what your dog wants, the way you want it. Everything you love about curated subscription boxes, plus customizable auto-replenishments, combined together.</p>
             </div>
           </div>
           <div id="process">
@@ -49,28 +49,28 @@
               <b-row class="row-r-overflow">
                 <b-col md>
                   <div class="process-img">
-                    <img src="../../assets/images/step1.jpg" />
+                    <img v-scrollanimation src="../../assets/images/step1.jpg" />
                     <div id="step1" class="process-step">
                       <h4>Register</h4>
-                      <p>Sign up with your email/mobile number.</p>
+                      <p v-scrollanimation>Sign up with your email/mobile number.</p>
                     </div>
                   </div>
                 </b-col>
                 <b-col md>
                   <div class="process-img">
-                    <img src="../../assets/images/step2.jpg" />
+                    <img v-scrollanimation src="../../assets/images/step2.jpg" />
                     <div id="step2" class="process-step">
                       <h4>Tell us about your pet</h4>
-                      <p>Fill in details of your pet (Breed, Age, Preference)</p>
+                      <p v-scrollanimation>Fill in details of your pet (Breed, Age, Preference)</p>
                     </div>
                   </div>
                 </b-col>
                 <b-col md>
                   <div class="process-img">
-                    <img src="../../assets/images/step3.jpg" />
+                    <img v-scrollanimation src="../../assets/images/step3.jpg" />
                     <div id="step3" class="process-step">
                       <h4>Kick back and relax</h4>
-                      <p>Start getting your pet's monthly supplies at your doorstep</p>
+                      <p v-scrollanimation>Start getting your pet's monthly supplies at your doorstep</p>
                     </div>
                   </div>
                 </b-col>
@@ -81,7 +81,7 @@
                 <button v-on:click="contact()" type="button" class="btn-getstarted">Get Started!</button>
               </span>
             </div>
-            <div id="welcome">
+            <div v-scrollanimation id="welcome">
               <h4>
                 Welcome to the
                 <span class="vl-color">PufBox</span> family!
@@ -93,7 +93,7 @@
             <div id="story">
               <h1>
                 What is the
-                <span id="story-text">PufBox?</span>
+                <span v-scrollanimation id="story-text">PufBox?</span>
               </h1>
             </div>
           </div>
@@ -101,10 +101,10 @@
             <div class="bv-example-row">
               <b-row class="row-r-overflow">
                 <b-col md="8">
-                  <div v-scrollanimation id="vision-text">
-                    <p>The PufBox is your one-stop monthly subscription box for all your dog care needs.It is designed to be a pet parents virtual best-friend that curates an assortment of products that are all carefully chosen to meet the preferences and growth requirements of your furry friends.</p>
-                    <p>The PufBox includes a whole host of pet care products like delicious daily food, softening shampoos, fragrant colognes, mlem inducing treats, moisturising paw butters, and tail-chasing toys among a variety of products that are sure to delight your pet.</p>
-                    <p>Every box offers convenience, personalisation and variety at an exceptional value.So go ahead and choose from our range of 3 wonderfully curated boxes of unconditional pet care.</p>
+                  <div  id="vision-text">
+                    <p v-scrollanimation>The PufBox is your one-stop monthly subscription box for all your dog care needs.It is designed to be a pet parents virtual best-friend that curates an assortment of products that are all carefully chosen to meet the preferences and growth requirements of your furry friends.</p>
+                    <p v-scrollanimation>The PufBox includes a whole host of pet care products like delicious daily food, softening shampoos, fragrant colognes, mlem inducing treats, moisturising paw butters, and tail-chasing toys among a variety of products that are sure to delight your pet.</p>
+                    <p v-scrollanimation>Every box offers convenience, personalisation and variety at an exceptional value.So go ahead and choose from our range of 3 wonderfully curated boxes of unconditional pet care.</p>
                   </div>
                 </b-col>
                 <b-col style="padding-right: 0;" md="4">
@@ -112,10 +112,10 @@
                     <div id="vision-block">
                       <h1>
                         Our
-                        <span style="font-weight:bold">Philosophy</span>
+                        <span v-scrollanimation style="font-weight:bold">Philosophy</span>
                       </h1>
-                      <p>The philosophy behind the creation of The Puf Box is to deliver a million smiles through customer intimacy. We want your pet parenting experience to be simple yet surreal.</p>
-                      <img src="../../assets/images/philosophy-pen.png" />
+                      <p v-scrollanimation>The philosophy behind the creation of The Puf Box is to deliver a million smiles through customer intimacy. We want your pet parenting experience to be simple yet surreal.</p>
+                      <img v-scrollanimation src="../../assets/images/philosophy-pen.png" />
                     </div>
                   </div>
                 </b-col>
@@ -414,6 +414,22 @@ export default {
   }
 }
 @media screen and (max-width: 330px){
+}
+/*
+    This classes are for the directive. 
+    For each element observed by our directive, the before-enter class is added.
+  */
+.before-enter {
+  opacity: 0;
+  transform: translateY(100px);
+  transition: all 2s ease-out;
+}
+/* 
+    If the element intersects with the viewport, the before-enter class is added.
+  */
+.enter {
+  opacity: 1;
+  transform: translateY(0px);
 }
 
 </style>

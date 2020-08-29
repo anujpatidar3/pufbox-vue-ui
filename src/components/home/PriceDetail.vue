@@ -3,18 +3,18 @@
     <div id="plan-heading">
       <h4>
         Plans by
-        <span style="font-weight:bold" class="vl-color">PufBox</span>
+        <span v-scrollanimation style="font-weight:bold" class="vl-color">PufBox</span>
       </h4>
     </div>
     <div id="plan-cards">
       <div class="bv-example-row">
         <b-row class="row-r-overflow">
-          <b-col class="card-col" md="4">
+          <b-col v-scrollanimation class="card-col" md="4">
             <div class="card-prn">
-              <div class="plan-header">
+              <div v-scrollanimation class="plan-header">
                 <h6>The Shiny Silver Wag-On!</h6>
               </div>
-              <div class="plan-rate">
+              <div v-scrollanimation class="plan-rate">
                 <h2>
                   <sup>₹</sup>
                   <span>2100/</span>
@@ -22,20 +22,20 @@
                 </h2>
                 <small>Onwards</small>
               </div>
-              <div class="plan-description">
+              <div v-scrollanimation class="plan-description">
                 <p>The perfect Dog Box to meet all your pet toy needs. Get one for yourself, or a friend! This box will have 5 to 6 items which can include an assortment of toys, treats, accessories and grooming products.</p>
               </div>
                <div class="btn-image">
-                   <span class="dot"><img src="../../assets/images/mustaches.svg"></span>
+                   <span v-scrollanimation class="dot"><img src="../../assets/images/mustaches.svg"></span>
               </div>
             </div>
           </b-col>
-          <b-col class="card-col" md="4">
+          <b-col v-scrollanimation class="card-col" md="4">
             <div class="card-prn">
-              <div class="plan-header">
+              <div v-scrollanimation class="plan-header">
                 <h6>The Bold Gold Wag-On!</h6>
               </div>
-              <div class="plan-rate">
+              <div v-scrollanimation class="plan-rate">
                 <h2>
                   <sup>₹</sup>
                   <span>3500/</span>
@@ -43,20 +43,20 @@
                 </h2>
                 <small>Onwards</small>
               </div>
-              <div class="plan-description">
+              <div v-scrollanimation class="plan-description">
                 <p>This bassy Box brings to you all the charms of the Shiny Silver package along with 8-10kg of dog food best suited to your pet’s breed provided by companies like Pedigree, Drools, Purina Super Coat and Smart Heart.</p>
               </div>
                <div class="btn-image">
-                   <span class="dot"><img src="../../assets/images/mustaches.svg"></span>
+                   <span v-scrollanimation class="dot"><img src="../../assets/images/mustaches.svg"></span>
               </div>
             </div>
           </b-col>
-          <b-col class="card-col" md="4">
+          <b-col v-scrollanimation class="card-col" md="4">
             <div class="card-prn">
-              <div class="plan-header">
+              <div v-scrollanimation class="plan-header">
                 <h6>The Plucky Platinum Wag-ON!</h6>
               </div>
-              <div class="plan-rate">
+              <div v-scrollanimation class="plan-rate">
                 <h2>
                   <sup>₹</sup>
                   <span>6100/</span>
@@ -64,11 +64,11 @@
                 </h2>
                 <small>Onwards</small>
               </div>
-              <div class="plan-description">
+              <div v-scrollanimation class="plan-description">
                 <p>The shiny silver box takes on some more shimmer with 7-12kg of premium dog food best suited to your pet’s nutritional needs supplied by premium companies like Farmina, Royal Canin.</p>
               </div>
               <div class="btn-image">
-                   <span class="dot"><img src="../../assets/images/mustaches.svg"></span>
+                   <span v-scrollanimation class="dot"><img src="../../assets/images/mustaches.svg"></span>
               </div>
             </div>
           </b-col>
@@ -129,7 +129,7 @@ export default {
 .btn-image{
     margin-top: 3rem;
     margin-bottom: 1rem;
-    transition: 0.3s ease;
+    transition: 0.1s ease !important;
 }
 .card-prn:hover .btn-image img{
     transform:scale(1.2) ;
@@ -158,5 +158,21 @@ export default {
   border:1px solid #00776e;
   background-color: var(--text-secondary-color);
   cursor: pointer;
+}
+/*
+    This classes are for the directive. 
+    For each element observed by our directive, the before-enter class is added.
+  */
+.before-enter {
+  opacity: 0;
+  transform: translateY(100px);
+  transition: all 2s ease-out;
+}
+/* 
+    If the element intersects with the viewport, the before-enter class is added.
+  */
+.enter {
+  opacity: 1;
+  transform: translateY(0px);
 }
 </style>
