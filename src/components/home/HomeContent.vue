@@ -1,6 +1,6 @@
 <template>
   <div class="HomeContent">
-    <div style="display:none" class="bv-example-row">
+    <div  class="bv-example-row">
       <b-row class="row-r-overflow">
         <b-col style="padding-right:0" md="8" offset-md="2">
           <div id="about-one-b">
