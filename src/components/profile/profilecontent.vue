@@ -25,6 +25,7 @@
       </md-step>
     </md-steppers>
   </div> -->
+   <md-button class="md-raised md-primary stepper-custom-btn" >Done</md-button>
   </div>
 </template>
 
