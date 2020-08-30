@@ -9,6 +9,7 @@
       @sdk-loaded="sdkLoaded">
     </facebook-login>
     </div>
+    <div>{{fbData}}</div>
   </div>
 </template>
 
@@ -26,10 +27,12 @@ export default {
   data(){
     return{
       isConnected: false,
-      name: '',
+      FB: undefined,
+      fbData:{
+         name: '',
       email: '',
       personalID: '',
-      FB: undefined
+      }
     }
   },
   methods: { 
@@ -37,9 +40,9 @@ export default {
       this.FB.api('/me', 'GET', { fields: 'id,name,email' },
         userInformation => {
           console.warn("data api",userInformation)
-          this.personalID = userInformation.id;
-          this.email = userInformation.email;
-          this.name = userInformation.name;
+          this.fbData.personalID = userInformation.id;
+          this.fbData.email = userInformation.email;
+          this.fbData.name = userInformation.name;
         }
       )
     },
