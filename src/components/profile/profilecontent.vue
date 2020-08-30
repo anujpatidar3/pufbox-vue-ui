@@ -1,6 +1,6 @@
 <template>
   <div class="profilecontent">
-    <div>
+    <!-- <div>
     <md-steppers  :md-active-step.sync="active" md-vertical md-linear>
       <md-step  id="first" md-label="First Step" md-description="Optional" :md-editable="false" :md-done.sync="first">
         <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestias doloribus eveniet quaerat modi cumque quos sed, temporibus nemo eius amet aliquid, illo minus blanditiis tempore, dolores voluptas dolore placeat nulla.</p>
@@ -24,7 +24,7 @@
         <md-button class="md-raised md-primary stepper-custom-btn" @click="setDone('third')">Done</md-button>
       </md-step>
     </md-steppers>
-  </div>
+  </div> -->
   </div>
 </template>
 

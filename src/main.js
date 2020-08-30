@@ -8,7 +8,7 @@ import "bootstrap-vue/dist/bootstrap-vue.css"
 import './icons.js';
 import VueMaterial from 'vue-material'
 import 'vue-material/dist/vue-material.min.css'
-
+import 'vue-material/dist/theme/default.css'
 import ScrollAnimation from './directives/scrollanimation'
 import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome'
 
