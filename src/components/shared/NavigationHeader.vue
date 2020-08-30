@@ -27,6 +27,11 @@
             <a>Contact</a>
           </a>
         </li>
+         <li v-bind:class="{ 'fade': isToggle,'m-right': !isToggle }">
+          <a v-on:click="profile()">
+            <a>Profile</a>
+          </a>
+        </li>
       </ul>
     </nav>
   </div>
@@ -68,6 +73,12 @@ export default {
       }
       this.$router.push("/contact");
     },
+    profile(){
+       if (this.isToggle) {
+        this.isToggle = false;
+      }
+      this.$router.push("/profile");
+    }
   },
 };
 </script>
