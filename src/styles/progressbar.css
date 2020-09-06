@@ -1,0 +1,35 @@
+.meter {
+    height: 13px;
+    position: relative;
+    background: #ced4da;
+    overflow: hidden;
+    border-radius: 100px;
+}
+
+.meter span {
+    display: block;
+    height: 100%;
+}
+
+.progress {
+    background-color: var(--theme-vl-color);
+    animation: progressBar 5s ease-in-out;
+    animation-fill-mode: both;
+}
+
+.meter-progress {
+    border-radius: 100px;
+    border: 1px solid var(--theme-vl-color);
+    background-color: var(--theme-vl-color);
+    box-shadow: 0 10px 40px -10px var(--theme-vl-color);
+    animation: load 3s normal forwards;
+}
+
+@keyframes progressBar {
+    0% {
+        width: 0;
+    }
+    100% {
+        width: 100%;
+    }
+}

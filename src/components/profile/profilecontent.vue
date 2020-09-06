@@ -3,7 +3,13 @@
     <div class="bv-example-row">
       <b-row class="row-r-overflow">
         <b-col md="8" offset-md="2">
-          <div>
+          <div id="stepper">
+            <img src="../../assets/profile/gif/4.gif">
+           <div class="meter">
+    <span class="meter-progress" v-bind:style="{ width: width + '%' }" ><span class="progress"></span></span>
+</div>
+          </div>
+          <div class="stepper-parent" style="margin-top:3rem">
             <div
               id="step-first"
               v-bind:class="{ 'show-step': active==='first','hide-step': active!=='first' }"
@@ -180,11 +186,12 @@
               </div>
               <button type="submit" v-on:click="onStepFourthSubmit()" class="btn-contact-2">Continue</button>
             </div>
-            <div id="step-fifth" v-bind:class="{ 'show-step': active==='fifth','hide-step': active!=='fifth' }">
+            <div
+              id="step-fifth"
+              v-bind:class="{ 'show-step': active==='fifth','hide-step': active!=='fifth' }"
+            >
               <div id="third-content-prn" class="content-prn">
-                <div id="third-content" class="content-child">
-                  defs
-                </div>
+                <div id="third-content" class="content-child">defs</div>
               </div>
             </div>
           </div>
@@ -208,6 +215,9 @@ export default {
     stepData: {},
     selected: [],
     isVeg: false,
+    width:0,
+    stepsCompleted:0,
+    totalSteps:5,
     optionsNotNeeded: [
       { key: 1, item: "Egg", name: "Egg", disabled: false },
       { key: 2, item: "Chicken", name: "Chicken", disabled: false },
@@ -240,6 +250,8 @@ export default {
     setDone(id, index) {
       console.log(index);
       if (index) {
+        this.stepsCompleted++;
+        this.width=(this.stepsCompleted/this.totalSteps)*100;console.log(this.width)
         this.active = index;
       }
     },
@@ -257,12 +269,13 @@ export default {
 <style lang="scss" scoped>
 @import "../../styles/variables.css";
 @import "../../styles/checkbox.css";
+@import "../../styles/progressbar.css";
 .row-r-overflow {
   width: 100%;
   padding-left: 2rem;
 }
 .profilecontent {
-  margin-top: 8rem;
+  margin-top: 3.5rem;
 }
 .show-step {
   display: block;
