@@ -4,10 +4,25 @@
       <b-row class="row-r-overflow">
         <b-col md="8" offset-md="2">
           <div id="stepper">
-            <img src="../../assets/profile/gif/4.gif">
-           <div class="meter">
-    <span class="meter-progress" v-bind:style="{ width: width + '%' }" ><span class="progress"></span></span>
-</div>
+            <div class="small-step">
+              <img src="../../assets/profile/gif/4.gif" />
+              <div class="meter">
+                <span class="meter-progress" v-bind:style="{ width: width + '%' }">
+                  <span class="progress"></span>
+                </span>
+              </div>
+            </div>
+            <div class="large-step">
+              <div class="container-stepper">
+                <ul class="progressbar-step">
+                  <li
+                    v-for="step in totalStepper"
+                    :key="step"
+                    v-bind:class="{ 'active-step': step<=currentActiveStep }"
+                  ></li>
+                </ul>
+              </div>
+            </div>
           </div>
           <div class="stepper-parent" style="margin-top:3rem">
             <div
@@ -215,9 +230,11 @@ export default {
     stepData: {},
     selected: [],
     isVeg: false,
-    width:0,
-    stepsCompleted:0,
-    totalSteps:5,
+    width: 0,
+    stepsCompleted: 0,
+    totalSteps: 5,
+    totalStepper: [1, 2, 3, 4, 5],
+    currentActiveStep: 0,
     optionsNotNeeded: [
       { key: 1, item: "Egg", name: "Egg", disabled: false },
       { key: 2, item: "Chicken", name: "Chicken", disabled: false },
@@ -251,8 +268,11 @@ export default {
       console.log(index);
       if (index) {
         this.stepsCompleted++;
-        this.width=(this.stepsCompleted/this.totalSteps)*100;console.log(this.width)
+        this.width = (this.stepsCompleted / this.totalSteps) * 100;
+        console.log(this.width);
         this.active = index;
+        this.currentActiveStep = this.stepsCompleted;
+        console.log(this.currentActiveStep);
       }
     },
     onlyVegCheckBox(event) {

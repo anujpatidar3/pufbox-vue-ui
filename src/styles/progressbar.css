@@ -33,3 +33,87 @@
         width: 100%;
     }
 }
+
+
+/* changing stepper based on the size */
+
+.small-step {
+    display: none;
+}
+
+.large-step {
+    display: block;
+    margin-top: 5rem;
+    padding-bottom: 4rem;
+}
+
+@media screen and (max-width: 768px) {
+    .small-step {
+        display: block;
+    }
+    .large-step {
+        display: none;
+    }
+}
+
+@import url(https://fonts.googleapis.com/css?family=Roboto:700);
+.container-stepper {
+    width: 100%;
+    color: white;
+    font-family: 'Roboto', sans-serif;
+}
+
+.progressbar-step {
+    counter-reset: step;
+}
+
+.progressbar-step li {
+    position: relative;
+    list-style: none;
+    float: left;
+    width: 19.33%;
+    text-align: center;
+}
+
+
+/* Circles */
+
+.progressbar-step li:before {
+    content: counter(step);
+    counter-increment: step;
+    width: 40px;
+    height: 40px;
+    display: block;
+    text-align: center;
+    margin: 0 auto 10px auto;
+    border-radius: 50%;
+    background-color: var(--progress-secondary-color);
+    /* Center # in circle */
+    line-height: 39px;
+    position: inherit;
+    z-index: 1000;
+}
+
+.progressbar-step li:after {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 3px;
+    background: var(--progress-secondary-color);
+    top: 20px;
+    /*half of height Parent (li) */
+    left: -50%;
+}
+
+.progressbar-step li:first-child:after {
+    content: none;
+}
+
+.progressbar-step li.active-step:before {
+    background: var(--theme-vl-color);
+    content: "✔";
+}
+
+.progressbar-step li.active-step+li:after {
+    background: var(--theme-vl-color);
+}
