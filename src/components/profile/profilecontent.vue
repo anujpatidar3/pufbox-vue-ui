@@ -1,6 +1,6 @@
 <template>
   <div class="profilecontent">
-    <div class="bv-example-row">
+    <div v-if="!showContactForm" class="bv-example-row">
       <b-row class="row-r-overflow">
         <b-col md="8" offset-md="2">
           <div id="stepper">
@@ -206,22 +206,34 @@
               v-bind:class="{ 'show-step': active==='fifth','hide-step': active!=='fifth' }"
             >
               <div id="third-content-prn" class="content-prn">
-                <div id="third-content" class="content-child">defs</div>
+                <div id="third-content" class="content-child">
+                  Last Step
+                  <p> {{stepData}}</p>
+                  <button type="submit" v-on:click="onStepFifthSubmit()" class="btn-contact-2">Continue</button>
+                </div>
               </div>
             </div>
           </div>
         </b-col>
       </b-row>
-      {{stepData}}
+     
+    </div>
+    <div v-if="showContactForm">
+      <summaryaddress></summaryaddress>
     </div>
   </div>
 </template>
 
 <script>
+import summaryaddress from "./summary-address";
 import { mapGetters } from "vuex";
 export default {
   name: "profilecontent",
+  components:{
+    summaryaddress
+  },
   data: () => ({
+    showContactForm:false,
     active: "first",
     dogName: "",
     dogWeight: "",
@@ -264,8 +276,10 @@ export default {
       this.stepData.optionsNotNeeded = this.optionsNotNeeded;
       this.setDone("fourth", "fifth");
     },
+    onStepFifthSubmit(){
+      this.showContactForm=true;
+    },
     setDone(id, index) {
-      console.log(index);
       if (index) {
         this.stepsCompleted++;
         this.width = (this.stepsCompleted / this.totalSteps) * 100;
